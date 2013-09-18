@@ -1,0 +1,18 @@
+services:
+    ws.validator.rule.notblank:
+        class: WS\JsFormValidatorBundle\Rules\NotBlank
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\NotBlank']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.length:
+        class: WS\JsFormValidatorBundle\Rules\Length
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Length']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.choice:
+        class: WS\JsFormValidatorBundle\Rules\Choice
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Choice']
+        tags:
+            - { name: ws.validator.linker }

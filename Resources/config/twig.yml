@@ -1,0 +1,6 @@
+services:
+    ws.twig.extension.form_validator:
+        class: WS\JsFormValidatorBundle\Twig\Extension\FormValidatorExtension
+        arguments: ['@twig.form.renderer', '%ws_js_form_validator.enabled%']
+        tags:
+            - { name: twig.extension }

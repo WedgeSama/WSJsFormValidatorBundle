@@ -1,0 +1,26 @@
+services:
+    ws.validator_getter:
+        class: WS\JsFormValidatorBundle\Getters\Constraints
+        arguments: ['@validator']
+    
+    ws.validator_form_extension:
+        class: WS\JsFormValidatorBundle\Form\Extension\FormExtension
+        calls:
+            - [initValidator, ['@ws.validator_getter', '@ws.validator_linker', '%ws_js_form_validator.config%']]
+        tags:
+            - { name: form.type_extension, alias: form }
+    
+    ws.validator_choice_extension:
+        class: WS\JsFormValidatorBundle\Form\Extension\ChoiceExtension
+        tags:
+            - { name: form.type_extension, alias: choice }
+    
+    ws.validator_checkbox_extension:
+        class: WS\JsFormValidatorBundle\Form\Extension\CheckboxExtension
+        tags:
+            - { name: form.type_extension, alias: checkbox }
+    
+    ws.validator_linker:
+        class: WS\JsFormValidatorBundle\Getters\Linker
+        arguments: ['@service_container']
+            

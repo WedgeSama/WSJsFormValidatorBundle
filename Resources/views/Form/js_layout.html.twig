@@ -1,0 +1,17 @@
+{% block form_validation %}
+{% spaceless %}
+    {% if form.vars.is_root %}
+    <script type="text/javascript">
+    	$('form[name={{ form.vars.name }}]').validator({{ form.vars.validator_config|json_encode|raw }});
+    </script>
+    {% endif %}
+    
+    {% for child in form -%}
+        {{ form_validation(child) }}
+    {%- endfor -%}
+{% endspaceless %}
+{% endblock form_validation %}
+
+{% block button_validation "" %}
+
+{% block field_validation "" %}
