@@ -95,13 +95,6 @@ class FormExtension extends AbstractTypeExtension {
                 $this->linker->getRuleObject($cst)
                     ->parseAttributes($cst));
         
-        if (count($csts) > 0)
-            $view->vars['has_constraints'] = true;
-        else
-            $view->vars['has_constraints'] = false;
-        
-        $view->vars['is_root'] = $form->isRoot();
-        
         if ($form->isRoot()) {
             $view->vars['attr']['name'] = $form->getName();
             $view->vars['validator_config'] = $options['validator_config'];
