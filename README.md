@@ -2,6 +2,7 @@ WSJsFormValidatorBundle
 =============
 
 A client side validator for Symfony2 using [jQuery framework](http://jquery.com/).
+This bundle use Symfony validations rules set on forms and entities to generate a client-side validation.
 
 Documentation
 -------------
