@@ -1,14 +1,25 @@
 WSJsFormValidatorBundle
 =============
 
-A client side validator for Symfony2.
+A client side validator for Symfony2 using [jQuery framework](http://jquery.com/).
 
 Documentation
 -------------
 
-The index of the documentation is stored in the `Resources/doc/index.md`
+The documentation is stored in the `Resources/doc`
 
-[Resources/doc/index.md](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/index.md)
+### Main
+- [Installation](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/install.md)
+- [Configuration](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/config.md)
+
+### Usages
+- [Basic](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/basic.md)
+- [Collection](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/collection.md)
+
+### List of constraints
+- NotBlank
+- Length
+- Choice
 
 License
 -------
@@ -16,3 +27,9 @@ License
 This bundle is under the MIT license. See the complete license in the bundle:
 
     Resources/meta/LICENSE
+
+TODO
+----
+- Handle select and textarea type. (Currently, just input type works)
+- Explain how to use custom constraint. (Already handle, just no doc :))
+- Add remains Symfony constraint
