@@ -5,6 +5,42 @@ services:
         tags:
             - { name: ws.validator.linker }
     
+    ws.validator.rule.blank:
+        class: WS\JsFormValidatorBundle\Rules\Blank
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Blank']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.notnull:
+        class: WS\JsFormValidatorBundle\Rules\NotNull
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\NotNull']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.null:
+        class: WS\JsFormValidatorBundle\Rules\Null
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Null']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.true:
+        class: WS\JsFormValidatorBundle\Rules\True
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\True']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.false:
+        class: WS\JsFormValidatorBundle\Rules\False
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\False']
+        tags:
+            - { name: ws.validator.linker }
+    
+    ws.validator.rule.type:
+        class: WS\JsFormValidatorBundle\Rules\Type
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Type']
+        tags:
+            - { name: ws.validator.linker }
+    
     ws.validator.rule.length:
         class: WS\JsFormValidatorBundle\Rules\Length
         arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Length']

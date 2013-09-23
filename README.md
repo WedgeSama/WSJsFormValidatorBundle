@@ -18,7 +18,16 @@ The documentation is stored in the `Resources/doc`
 - [Collection](https://github.com/WedgeSama/WSJsFormValidatorBundle/blob/master/Resources/doc/collection.md)
 
 ### List of constraints
+
+##### Basic
 - NotBlank
+- Blank
+- NotNull
+- Null
+- True
+- False
+
+##### String
 - Length
 - Choice
 
