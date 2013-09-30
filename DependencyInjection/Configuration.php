@@ -50,7 +50,7 @@ class Configuration implements ConfigurationInterface {
                             ->defaultTrue()
                         ->end()
                         ->booleanNode('onLive')
-                            ->defaultTrue()
+                            ->defaultFalse()
                         ->end()
                     ->end()
                 ->end()

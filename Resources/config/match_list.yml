@@ -41,6 +41,12 @@ services:
         tags:
             - { name: ws.validator.linker }
     
+    ws.validator.rule.email:
+        class: WS\JsFormValidatorBundle\Rules\Email
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Email']
+        tags:
+            - { name: ws.validator.linker }
+    
     ws.validator.rule.length:
         class: WS\JsFormValidatorBundle\Rules\Length
         arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Length']
@@ -50,5 +56,14 @@ services:
     ws.validator.rule.choice:
         class: WS\JsFormValidatorBundle\Rules\Choice
         arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Choice']
+        tags:
+            - { name: ws.validator.linker }
+
+# Repeated fake constraint
+    ws.validator.rule.repeated:
+        class: WS\JsFormValidatorBundle\Rules\Repeated
+        arguments: ['@translator', '\Repeated']
+        calls:
+            - [initValidator, ['@ws.validator_linker']]
         tags:
             - { name: ws.validator.linker }

@@ -94,10 +94,21 @@ class FormExtension extends AbstractTypeExtension {
             $view->vars['attr'] = array_merge($view->vars['attr'], 
                 $this->linker->getRuleObject($cst)
                     ->parseAttributes($cst));
-        
+            
+            // For root form
         if ($form->isRoot()) {
             $view->vars['attr']['name'] = $form->getName();
             $view->vars['validator_config'] = $options['validator_config'];
+        }
+        
+        // For repeated form in child
+        $repeated = $form->getConfig()
+            ->getAttribute('repeated', false);
+        
+        if ($repeated != false) {
+            $view->vars['attr'] = array_merge($view->vars['attr'], 
+                $this->linker->getRuleByName("\\Repeated")
+                    ->getRepeatedAttributes($view, $form));
         }
     }
 }

@@ -20,6 +20,11 @@ services:
         tags:
             - { name: form.type_extension, alias: checkbox }
     
+    ws.validator_repeated_extension:
+        class: WS\JsFormValidatorBundle\Form\Extension\RepeatedExtension
+        tags:
+            - { name: form.type_extension, alias: repeated }
+    
     ws.validator_linker:
         class: WS\JsFormValidatorBundle\Getters\Linker
         arguments: ['@service_container']
