@@ -74,12 +74,9 @@
         fieldValidator.isValid = function () {
         	var valid = true;
         	
-        	for(var i = 0; i < csts.length; i++) {
+        	for(var i = csts.length - 1; i >= 0; i--)
 				if(!csts[i].isValid())
-					valid = false;
-        	}
-        	
-        	return valid;
+					return false;
         };
         
         /**
