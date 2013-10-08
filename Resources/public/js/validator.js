@@ -169,7 +169,7 @@
         /**
 		 * Parse all fields in the form
 		 */
-        validator.parseFields = function (dom = null) {
+        validator.parseFields = function (dom) {
     		var $dom = dom ? $element.find(dom): $element;
     		
     		$dom.find('input').each(function() {
