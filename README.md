@@ -26,6 +26,7 @@ The documentation is stored in the `Resources/doc`
 - Null
 - True
 - False
+- Type (only: numeric, null, string) in progress...
 
 ##### String
 - Length
@@ -42,4 +43,6 @@ TODO
 ----
 - Handle select and textarea type. (Currently, just input type works)
 - Explain how to use custom constraint. (Already handle, just no doc :))
-- Add remains Symfony constraint
+- Add missing Symfony constraints.
+- Find a better solution to identify a FormError to a field/form.
+- Currently not working when using error_mapping.
