@@ -26,32 +26,37 @@
 
 		this.isValid = function() {
 			var value = field.getJElement().val();
+			var ok = true;
 
 			if (settings.exact != null) {
 				if (settings.exact != value.length) {
-					field.addViolation("length", settings.msg);
-					return false;
+					
+					field.upViolation("length", settings['msg'].replace(
+							/{{ value }}/g, value.length));
+					ok = false;
 				} else
 					field.rmViolation("length");
 			}
 
 			if (settings.min != null) {
 				if (settings.min > value.length) {
-					field.addViolation("length-min", settings['min-msg']);
-					return false;
+					field.upViolation("length-min", settings['min-msg']
+							.replace(/{{ value }}/g, value.length));
+					ok = false;
 				} else
 					field.rmViolation("length-min");
 			}
 
 			if (settings.max != null) {
 				if (settings.max < value.length) {
-					field.addViolation("length-max", settings['max-msg']);
-					return false;
+					field.upViolation("length-max", settings['max-msg']
+							.replace(/{{ value }}/g, value.length));
+					ok = false;
 				} else
 					field.rmViolation("length-max");
 			}
 
-			return true;
+			return ok;
 		};
 	};
 }(jQuery));
