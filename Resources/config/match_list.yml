@@ -53,6 +53,12 @@ services:
         tags:
             - { name: ws.validator.linker }
     
+    ws.validator.rule.url:
+        class: WS\JsFormValidatorBundle\Rules\Url
+        arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Url']
+        tags:
+            - { name: ws.validator.linker }
+    
     ws.validator.rule.choice:
         class: WS\JsFormValidatorBundle\Rules\Choice
         arguments: ['@translator', 'Symfony\Component\Validator\Constraints\Choice']

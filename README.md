@@ -29,7 +29,11 @@ The documentation is stored in the `Resources/doc`
 - Type (only: numeric, null, string) in progress...
 
 ##### String
+- Email
 - Length
+- Url (do not support ipv6 yet)
+
+##### Collection
 - Choice
 
 License
@@ -45,4 +49,4 @@ TODO
 - Explain how to use custom constraint. (Already handle, just no doc :))
 - Add missing Symfony constraints.
 - Find a better solution to identify a FormError to a field/form.
-- Currently not working when using error_mapping.
+- Currently not working when using error_mapping and error_bubbling.
