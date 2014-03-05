@@ -10,7 +10,7 @@
 namespace WS\JsFormValidatorBundle\Rules;
 
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Translation\IdentityTranslator;
+use Symfony\Component\Translation\TranslatorInterface;
 
 abstract class RulesModel implements RulesInterface {
 
@@ -29,13 +29,13 @@ abstract class RulesModel implements RulesInterface {
 
     /**
      *
-     * @var IdentityTranslator
+     * @var TranslatorInterface
      */
     protected $trans;
 
     protected $class;
 
-    public function __construct(IdentityTranslator $trans, $class) {
+    public function __construct(TranslatorInterface $trans, $class) {
         $this->attibutes = array();
         $this->constraint = null;
         $this->trans = $trans;
